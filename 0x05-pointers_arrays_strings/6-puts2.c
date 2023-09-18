@@ -18,7 +18,8 @@ int _strlen(char *s)
 }
 
 /**
- * puts2 - prints  char of  string starting
+ * puts2 - prints  char of:wq
+ * string starting
  * with the first char
  * @str: pointer to a string
  * Return: nothing
