@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_array it prints n elements of an array of integers
+ * print_array - prints n elements of an array of integers
+ *
  * @a: pointer to integer
  * @n: integer
+ *
  * Return: nothing
  */
 
