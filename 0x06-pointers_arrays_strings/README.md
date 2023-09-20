@@ -1,0 +1,1 @@
+directory containing 0x06-pointers_arrays_strings
