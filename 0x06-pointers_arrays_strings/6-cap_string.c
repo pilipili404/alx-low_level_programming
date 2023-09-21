@@ -1,31 +1,31 @@
 #include "main.h"
+
 /**
- * string_toupper - Changes all lowercase letters of a string to uppercase
- * @str: The string to convert
- * Return: A pointer to the modified string
+ * cap_string - capitalizes all words in a string
+ * @s: string
+ * Return: address of s
  */
-
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int i = 0;
+	int i = 0, j;
+	char a[] = " \t\n,;.!?\"(){}";
 
-	if (str[i] >= 'a' && str[i] <= 'z')
+	while (*(s + i))
 	{
-		str[i] = str[i] - 'a' + 'A';
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+		{
+			if (i == 0)
+				*(s + i) -= 'a' - 'A';
+			else
+			{
+				for (j = 0; j <= 12; j++)
+				{
+					if (a[j] == *(s + i - 1))
+						*(s + i) -= 'a' - 'A';
+				}
+			}
+		}
 		i++;
 	}
-
-	while (str[i] != '\0')
-	{
-		if ((str[i] >= 'a' && str[i] <= 'z') && (str[i - 1] == ',' ||
-			str[i - 1] == ';' || str[i - 1] == '.' ||
-			str[i - 1] == '!' || str[i - 1] == '?' || str[i - 1] == '"' ||
-			str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{' ||
-			str[i - 1] == '}' || str[i - 1] == ' ' || str[i - 1] == '\t'
-			|| str[i - 1] == '\n'))
-			str[i] = str[i] - 'a' + 'A';
-		i++;
-	}
-
-	return (str);
+	return (s);
 }
