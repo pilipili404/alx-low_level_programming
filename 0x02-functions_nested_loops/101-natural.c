@@ -1,17 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
+/**
+ * main - main block
+ *
+ * Return: 0.
+ */
+int main(void)
 
-int main() {
-    int limit = 1024;
-    int sum = 0;
+{
+	int c = 0;
+	int sum = 0;
 
-    for (int i = 0; i < limit; i++) {
-        if (i % 3 == 0 || i % 5 == 0) {
-            sum += i;
-        }
-    }
-
-    printf("The sum of all multiples of 3 or 5 below %d is: %d\n", limit, sum);
-
-    return 0;
+	while (c < 1024)
+	{
+		if (c % 3 == 0 || c % 5 == 0)
+		{
+			sum += c;
+		}
+		c++;
+	}
+	printf("%i\n", sum);
+	return (0);
 }
-
