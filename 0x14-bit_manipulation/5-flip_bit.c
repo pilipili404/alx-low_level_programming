@@ -9,17 +9,18 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int a, countbit = 0;
-	unsigned long int current;
-	unsigned long int exclusive = n ^ m;
+	
+	unsigned long int xorval = n ^ m;
+	unsigned int count = 0;
 
-	for (a = 63; a >= 0; a--)
+	while (xorval)
 	{
-		current = exclusive >> a;
-		if (current & 1)
-			countbit++;
+		if (xorval & 1ul)
+			count++;
+		xorval = xorval >> 1;
+
 	}
 
-	return (countbit);
+	return (count);
 
 }
